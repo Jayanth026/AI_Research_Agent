@@ -1,0 +1,30 @@
+:root { --bg: #0f1115; --card: #161a22; --text: #e6e6e6; --muted: #a0a0a0; --accent: #6aa0ff; --ok:#2ea043; --err:#e5534b; --warn:#e0a800; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
+header { padding: 16px 24px; border-bottom: 1px solid #202635; }
+header a { color: var(--text); text-decoration: none; }
+main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+footer { text-align: center; color: var(--muted); padding: 24px; }
+.card { background: var(--card); border: 1px solid #202635; border-radius: 14px; padding: 16px 18px; margin-bottom: 18px; }
+.query-form { display: flex; gap: 8px; }
+.query-form input { flex: 1; padding: 10px 12px; border-radius: 8px; border: 1px solid #2a2f40; background: #0e121a; color: var(--text); }
+.query-form button, .btn { background: var(--accent); color: #0b0f17; border: none; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.query-form button:hover, .btn:hover { filter: brightness(1.1); }
+.hint { color: var(--muted); margin-top: 8px; }
+.reports { width: 100%; border-collapse: collapse; }
+.reports th, .reports td { padding: 10px; border-bottom: 1px solid #262c3d; }
+.report-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.report-body { line-height: 1.6; }
+.report-body h1, .report-body h2, .report-body h3 { margin-top: 1.2em; }
+.sources { list-style: none; padding: 0; }
+.sources li { padding: 6px 0; border-bottom: 1px solid #262c3d; }
+.badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; margin-right: 8px; background: #2a2f40; color: #cfd9ff; border: 1px solid #37405a; }
+.badge.ok { background: #122018; color: #b5f0c9; border-color: #1e3a27; }
+.badge.error { background: #2b1515; color: #f8b0aa; border-color: #512626; }
+.badge.blocked { background: #2b2015; color: #f3d2a6; border-color: #5a4320; }
+.badge.skipped { background: #1c1f26; color: #c9d1d9; border-color: #2d3446; }
+.note { color: var(--muted); margin-left: 6px; }
+.flashes { display: grid; gap: 8px; margin-bottom: 12px; }
+.flash { padding: 8px 10px; border-radius: 8px; }
+.flash.success { background: #0f1f13; color: #b5f0c9; border: 1px solid #1d3a28; }
+.flash.error { background: #231214; color: #f8b0aa; border: 1px solid #4b2626; }

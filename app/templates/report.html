@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="card">
+  <div class="report-head">
+    <div>
+      <h2>Report</h2>
+      <p><strong>Query:</strong> {{ report.query }}</p>
+      <p><strong>Created:</strong> {{ report.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+    </div>
+    <div>
+      <a class="btn" href="/">Back</a>
+    </div>
+  </div>
+
+  <!-- Render the AI-generated Markdown (with clickable [Sx]) -->
+  <div class="report-body">{{ html | safe }}</div>
+</article>
+
+<section class="card">
+  <h3>Sources</h3>
+  <ul class="sources">
+    {% for s in sources %}
+      <li id="{{ s.label }}">
+        <strong>[{{ s.label }}]</strong>
+        <span class="badge {{ s.status }}">{{ s.status }}</span>
+        <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.title or s.url }}</a>
+        {% if s.note %}
+          <em class="note">
+            (
+            {% if "blocked" in s.note or s.status == "blocked" %}
+              Blocked by site
+            {% elif "ConnectTimeout" in s.note %}
+              Source unavailable (timeout)
+            {% elif "error" in s.note %}
+              Source unavailable
+            {% elif "empty" in s.note or s.status == "skipped" %}
+              No readable text
+            {% else %}
+              {{ s.note }}
+            {% endif %}
+            )
+          </em>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}
