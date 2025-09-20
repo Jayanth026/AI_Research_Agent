@@ -2,12 +2,12 @@
 
 ## Overview
 The **AI Research Agent** is a lightweight system that combines an **LLM (OpenAI)** with two fixed tools:
-1. **Web Search (Tavily API)** – to discover relevant sources.
-2. **Content Extractor (Trafilatura + PyPDF)** – to fetch and clean text from web pages and PDFs.
+1. **Web Search (Tavily API)** -> to discover relevant sources.
+2. **Content Extractor (Trafilatura + PyPDF)** -> to fetch and clean text from web pages and PDFs.
 
 It allows you to:
 - Enter a query (e.g., *"Latest research on AI in education"* or *"Impact of Mediterranean diet on heart health"*).
-- Search and extract 2–3 reliable sources.
+- Search and extract 2-3 reliable sources.
 - Summarize findings into a short, structured report using an LLM.
 - Save reports in a database (SQLite).
 - View past reports in a simple web interface.
@@ -21,7 +21,7 @@ Errors (timeouts, blocked sites, missing text) are handled gracefully with frien
 ```
 [ User Query ]
       │
-[ Tavily Search API ] -> Finds 2–3 URLs
+[ Tavily Search API ] -> Finds 2-3 URLs
       |
 [ Trafilatura / PyPDF Extractor ] -> Cleans HTML/PDF text
       │
@@ -36,7 +36,7 @@ Errors (timeouts, blocked sites, missing text) are handled gracefully with frien
 
 ### 1. Clone repo & install dependencies
 ```bash
-git clone 
+git clone https://github.com/Jayanth026/AI_Research_Agent.git
 cd ai-research-agent
 pip install -r requirements.txt
 ```
@@ -87,9 +87,6 @@ Then open: [http://localhost:8000](http://localhost:8000)
 ---
 
 ## Where AI Helped
-This project was bootstrapped with the assistance of AI for:
-- Drafting boilerplate code (Flask app, SQLAlchemy models, extractor functions).  
-- Writing the OpenAI client integration.  
-- Debugging issues with API versions (`openai>=1.40.0`).  
-- Improving error handling and UI messaging.  
-- Creating this README.md file.
+This project was developed with AI assistance for two parts:
+- Frontend development: creating the HTML templates, CSS styling, and improving the user interface.
+- Error handling & exceptions: designing clean, user-friendly error messages (e.g., Blocked by site, Source unavailable).
