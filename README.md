@@ -90,3 +90,8 @@ Then open: [http://localhost:8000](http://localhost:8000)
 This project was developed with AI assistance for two parts:
 - Frontend development: creating the HTML templates, CSS styling, and improving the user interface.
 - Error handling & exceptions: designing clean, user-friendly error messages (e.g., Blocked by site, Source unavailable).
+
+---
+
+## Demo Video
+- Demo video showing query -> results -> saved report -> viewing it on the web can be visiable in Demo_video.mp4 file
